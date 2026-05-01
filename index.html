@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse Do — Productivity App</title>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <div class="splash-logo">Pulse Do</div>
+  <div class="splash-tagline">Your productivity, elevated</div>
+
+  <div class="splash-bars">
+    <div class="splash-bar"></div>
+    <div class="splash-bar"></div>
+    <div class="splash-bar"></div>
+    <div class="splash-bar"></div>
+    <div class="splash-bar"></div>
+  </div>
+
+  <button class="splash-btn" onclick="launchApp()">Get Started →</button>
+</div>
+
+<!-- APP -->
+<div id="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sb-brand">
+      <div class="sb-icon">⚡</div>
+      <div class="sb-title">Pulse Do</div>
+    </div>
+
+    <div class="sb-nav">
+      <div class="nav-item active" onclick="nav('dashboard',this)">
+        <span class="nav-icon">🏠</span><span>Dashboard</span>
+      </div>
+
+      <div class="nav-item" onclick="nav('tasks',this)">
+        <span class="nav-icon">✅</span><span>Tasks</span>
+        <span class="nav-badge" id="taskBadge">0</span>
+      </div>
+
+      <div class="nav-item" onclick="nav('projects',this)">
+        <span class="nav-icon">📁</span><span>Projects</span>
+      </div>
+
+      <div class="nav-item" onclick="nav('analytics',this)">
+        <span class="nav-icon">📊</span><span>Analytics</span>
+      </div>
+
+      <div class="nav-item" onclick="nav('notifications',this)">
+        <span class="nav-icon">🔔</span><span>Notifications</span>
+      </div>
+
+      <div class="nav-item" onclick="nav('settings',this)">
+        <span class="nav-icon">⚙️</span><span>Settings</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <div class="topbar">
+      <div class="topbar-title" id="topbarTitle">Dashboard</div>
+
+      <div class="topbar-right">
+        <button class="topbar-btn primary" onclick="nav('tasks',document.querySelectorAll('.nav-item')[1])">
+          + New Task
+        </button>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="page active" id="page-dashboard">
+
+      <div class="stats-grid">
+        <div class="stat-card c1">
+          <div class="stat-label">Total Tasks</div>
+          <div class="stat-val" id="s-total">0</div>
+        </div>
+
+        <div class="stat-card c2">
+          <div class="stat-label">Pending</div>
+          <div class="stat-val" id="s-pending">0</div>
+        </div>
+
+        <div class="stat-card c3">
+          <div class="stat-label">Completed</div>
+          <div class="stat-val" id="s-done">0</div>
+        </div>
+
+        <div class="stat-card c4">
+          <div class="stat-label">Progress</div>
+          <div class="stat-val" id="s-pct">0%</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Recent Tasks</div>
+        <div id="recentTasks"></div>
+      </div>
+
+    </div>
+
+    <!-- TASKS -->
+    <div class="page" id="page-tasks">
+
+      <div class="card">
+        <input id="taskInput" placeholder="Enter task">
+        <input type="date" id="taskDue">
+        <select id="taskPri">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <button onclick="addTask()">Add Task</button>
+      </div>
+
+      <div id="taskList"></div>
+
+    </div>
+
+    <div class="page" id="page-projects"></div>
+    <div class="page" id="page-analytics"></div>
+    <div class="page" id="page-notifications"></div>
+    <div class="page" id="page-settings"></div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

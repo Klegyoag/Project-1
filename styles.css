@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --bg:#0a0b0f;
+  --sidebar:#0f1117;
+  --card:#13151c;
+  --card2:#181b24;
+  --border:rgba(255,255,255,0.07);
+  --accent:#7c6fff;
+  --accent2:#ff6b6b;
+  --accent3:#43e97b;
+  --text:#f0f0f5;
+  --muted:#6b6e7e;
+}
+
+html,body{
+  height:100%;
+  overflow:hidden;
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* SPLASH */
+#splash{
+  position:fixed;
+  inset:0;
+  z-index:999;
+  background:var(--bg);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.splash-logo{
+  font-family:'Syne';
+  font-size:64px;
+  font-weight:800;
+  background:linear-gradient(135deg,#7c6fff,#ff6b6b,#ffc25e);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.splash-btn{
+  margin-top:30px;
+  padding:12px 40px;
+  border:none;
+  border-radius:50px;
+  background:var(--accent);
+  color:#fff;
+  cursor:pointer;
+}
+
+/* APP */
+#app{
+  display:flex;
+  height:100%;
+  opacity:0;
+}
+
+.sidebar{
+  width:230px;
+  background:var(--sidebar);
+  padding:20px;
+}
+
+.nav-item{
+  padding:10px;
+  cursor:pointer;
+  color:var(--muted);
+}
+
+.nav-item.active{
+  background:var(--accent);
+  color:#fff;
+  border-radius:10px;
+}
+
+.main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+.topbar{
+  padding:18px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+}
+
+.page{
+  display:none;
+  padding:25px;
+  overflow:auto;
+}
+
+.page.active{
+  display:block;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:14px;
+  margin-bottom:15px;
+}
