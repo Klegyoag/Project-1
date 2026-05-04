@@ -15,8 +15,8 @@
   --card:#13151c;
   --card2:#181b24;
   --border:rgba(255,255,255,0.07);
-  --accent:#7c6fff;
-  --accent2:#ff6b6b;
+  --accent: #b13f41;
+  --accent2: #ff6b6b;
   --accent3:#43e97b;
   --text:#f0f0f5;
   --muted:#6b6e7e;
@@ -283,20 +283,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 .ft-btn.del-btn:hover{background:rgba(255,107,107,0.15);color:var(--high);border-color:var(--high);}
 .empty-state{text-align:center;padding:60px;color:var(--muted);}
 .empty-state .es-icon{font-size:48px;margin-bottom:12px;opacity:0.4;}
- 
-/* ===== PROJECTS ===== */
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.proj-card{
-  background:var(--card);border:1px solid var(--border);border-radius:16px;
-  padding:20px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;
-  position:relative;overflow:hidden;
-}
-.proj-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,0.4);}
-.proj-color{width:40px;height:40px;border-radius:12px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;font-size:20px;}
-.proj-name{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:6px;}
-.proj-desc{font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.5;}
-.proj-tasks{font-size:12px;color:var(--muted);}
- 
+  
 /* ===== ANALYTICS ===== */
 .analytics-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
 .chart-bars{display:flex;gap:8px;align-items:flex-end;height:120px;margin-top:16px;}
@@ -308,24 +295,6 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 .donut-legend{display:flex;flex-direction:column;gap:8px;}
 .leg-item{display:flex;align-items:center;gap:8px;font-size:12px;}
 .leg-dot{width:8px;height:8px;border-radius:50%;}
- 
-/* ===== NOTIFICATIONS ===== */
-.notif-item{
-  display:flex;gap:14px;align-items:flex-start;
-  padding:16px;background:var(--card);border:1px solid var(--border);
-  border-radius:12px;margin-bottom:10px;
-  animation:slideIn 0.3s ease both;
-}
-.notif-item.unread{border-left:3px solid var(--accent);}
-.notif-avatar{
-  width:36px;height:36px;border-radius:10px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-size:16px;
-}
-.notif-content{flex:1;}
-.notif-title{font-size:13px;font-weight:500;margin-bottom:3px;}
-.notif-body{font-size:12px;color:var(--muted);line-height:1.5;}
-.notif-time{font-size:11px;color:var(--muted);margin-top:4px;}
-.unread-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:4px;}
  
 /* ===== SETTINGS ===== */
 .settings-section{margin-bottom:28px;}
@@ -416,15 +385,8 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
         <span class="nav-icon">✅</span><span>Tasks</span>
         <span class="nav-badge" id="taskBadge">0</span>
       </div>
-      <div class="nav-item" onclick="nav('projects',this)">
-        <span class="nav-icon">📁</span><span>Projects</span>
-      </div>
       <div class="nav-item" onclick="nav('analytics',this)">
         <span class="nav-icon">📊</span><span>Analytics</span>
-      </div>
-      <div class="nav-item" onclick="nav('notifications',this)">
-        <span class="nav-icon">🔔</span><span>Notifications</span>
-        <span class="nav-badge" style="background:var(--accent2)" id="notifBadge">3</span>
       </div>
       <div class="nav-item" onclick="nav('settings',this)">
         <span class="nav-icon">⚙️</span><span>Settings</span>
@@ -546,52 +508,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
  
       <div id="taskList"></div>
     </div>
- 
-    <!-- PROJECTS PAGE -->
-    <div class="page" id="page-projects">
-      <div class="proj-grid">
-        <div class="proj-card">
-          <div class="proj-color" style="background:rgba(124,111,255,0.2);">🚀</div>
-          <div class="proj-name">Product Launch</div>
-          <div class="proj-desc">Q2 feature rollout and marketing campaign coordination.</div>
-          <div class="prog-track" style="margin-bottom:8px;"><div class="prog-fill" style="width:72%;background:var(--accent)"></div></div>
-          <div class="proj-tasks">72% · 18/25 tasks done</div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-color" style="background:rgba(255,107,107,0.2);">🎨</div>
-          <div class="proj-name">Design System</div>
-          <div class="proj-desc">Unified component library and brand guidelines update.</div>
-          <div class="prog-track" style="margin-bottom:8px;"><div class="prog-fill" style="width:45%;background:var(--accent2)"></div></div>
-          <div class="proj-tasks">45% · 9/20 tasks done</div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-color" style="background:rgba(67,233,123,0.2);">📱</div>
-          <div class="proj-name">Mobile App</div>
-          <div class="proj-desc">iOS and Android version of the core dashboard experience.</div>
-          <div class="prog-track" style="margin-bottom:8px;"><div class="prog-fill" style="width:30%;background:var(--accent3)"></div></div>
-          <div class="proj-tasks">30% · 6/20 tasks done</div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-color" style="background:rgba(255,194,94,0.2);">📊</div>
-          <div class="proj-name">Analytics V2</div>
-          <div class="proj-desc">New reporting pipeline with real-time metrics and dashboards.</div>
-          <div class="prog-track" style="margin-bottom:8px;"><div class="prog-fill" style="width:88%;background:var(--med)"></div></div>
-          <div class="proj-tasks">88% · 22/25 tasks done</div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-color" style="background:rgba(124,111,255,0.2);">🔐</div>
-          <div class="proj-name">Security Audit</div>
-          <div class="proj-desc">End-to-end security review and penetration testing sprint.</div>
-          <div class="prog-track" style="margin-bottom:8px;"><div class="prog-fill" style="width:55%;background:var(--accent)"></div></div>
-          <div class="proj-tasks">55% · 11/20 tasks done</div>
-        </div>
-        <div class="proj-card" style="border-style:dashed;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--muted);">
-          <div style="font-size:28px;">+</div>
-          <div style="font-size:13px;font-weight:500;">New Project</div>
-        </div>
-      </div>
-    </div>
- 
+  
     <!-- ANALYTICS PAGE -->
     <div class="page" id="page-analytics">
       <div class="analytics-grid">
@@ -646,58 +563,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
         </div>
       </div>
     </div>
- 
-    <!-- NOTIFICATIONS PAGE -->
-    <div class="page" id="page-notifications">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
-        <div style="font-size:13px;color:var(--muted);" id="notifCount">3 unread notifications</div>
-        <button class="topbar-btn" onclick="markAllRead()">Mark all read</button>
-      </div>
-      <div class="notif-item unread" id="n1">
-        <div class="notif-avatar" style="background:rgba(124,111,255,0.2);">⚡</div>
-        <div class="notif-content">
-          <div class="notif-title">Task due soon</div>
-          <div class="notif-body">You have tasks due within the next 24 hours. Stay on track!</div>
-          <div class="notif-time">2 minutes ago</div>
-        </div>
-        <div class="unread-dot"></div>
-      </div>
-      <div class="notif-item unread" id="n2">
-        <div class="notif-avatar" style="background:rgba(255,107,107,0.2);">🔴</div>
-        <div class="notif-content">
-          <div class="notif-title">High priority alert</div>
-          <div class="notif-body">A high priority task has been pending for over 3 days.</div>
-          <div class="notif-time">1 hour ago</div>
-        </div>
-        <div class="unread-dot"></div>
-      </div>
-      <div class="notif-item unread" id="n3">
-        <div class="notif-avatar" style="background:rgba(67,233,123,0.2);">🎯</div>
-        <div class="notif-content">
-          <div class="notif-title">Milestone reached!</div>
-          <div class="notif-body">You've completed 10 tasks this week. Keep up the momentum!</div>
-          <div class="notif-time">3 hours ago</div>
-        </div>
-        <div class="unread-dot"></div>
-      </div>
-      <div class="notif-item">
-        <div class="notif-avatar" style="background:rgba(255,194,94,0.2);">📊</div>
-        <div class="notif-content">
-          <div class="notif-title">Weekly summary</div>
-          <div class="notif-body">Your weekly productivity report is ready to view in Analytics.</div>
-          <div class="notif-time">Yesterday</div>
-        </div>
-      </div>
-      <div class="notif-item">
-        <div class="notif-avatar" style="background:rgba(124,111,255,0.2);">🚀</div>
-        <div class="notif-content">
-          <div class="notif-title">Welcome to Pulse Do!</div>
-          <div class="notif-body">Your productivity journey starts here. Add your first task to get started.</div>
-          <div class="notif-time">2 days ago</div>
-        </div>
-      </div>
-    </div>
- 
+  
     <!-- SETTINGS PAGE -->
     <div class="page" id="page-settings">
       <div style="max-width:600px;">
@@ -716,23 +582,12 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
               <div class="setting-desc">Choose your primary highlight color</div>
             </div>
             <div class="color-opts">
-              <div class="col-dot active" style="background:#7c6fff" onclick="setAccent('#7c6fff',this)"></div>
+              <div class="col-dot active" style="background:#b13f41" onclick="setAccent('#b13f41',this)"></div>
               <div class="col-dot" style="background:#ff6b6b" onclick="setAccent('#ff6b6b',this)"></div>
               <div class="col-dot" style="background:#43e97b" onclick="setAccent('#43e97b',this)"></div>
               <div class="col-dot" style="background:#ffc25e" onclick="setAccent('#ffc25e',this)"></div>
               <div class="col-dot" style="background:#00bcd4" onclick="setAccent('#00bcd4',this)"></div>
             </div>
-          </div>
-          <div class="setting-row">
-            <div>
-              <div class="setting-label">Font Size</div>
-              <div class="setting-desc">Adjust text size across the app</div>
-            </div>
-            <select class="sel-input" onchange="document.documentElement.style.fontSize=({Small:'13px',Medium:'15px',Large:'17px'})[this.value]">
-              <option>Small</option>
-              <option selected>Medium</option>
-              <option>Large</option>
-            </select>
           </div>
         </div>
  
@@ -751,13 +606,6 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
               <div class="setting-desc">Receive weekly productivity reports</div>
             </div>
             <button class="toggle on" onclick="this.classList.toggle('on')"></button>
-          </div>
-          <div class="setting-row">
-            <div>
-              <div class="setting-label">Sound Effects</div>
-              <div class="setting-desc">Play sounds on task completion</div>
-            </div>
-            <button class="toggle" onclick="this.classList.toggle('on')"></button>
           </div>
         </div>
  
@@ -784,8 +632,8 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
       </div>
     </div>
  
-  </div><!-- /main -->
-</div><!-- /app -->
+  </div>
+</div>
  
 <script>
 // ===== STATE =====
@@ -809,9 +657,7 @@ function launchApp() {
 const pageTitles = {
   dashboard: 'Dashboard',
   tasks: 'Tasks',
-  projects: 'Projects',
   analytics: 'Analytics',
-  notifications: 'Notifications',
   settings: 'Settings'
 };
  
@@ -974,7 +820,7 @@ function updateAnalytics() {
  
   const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   const vals = [3, 7, 5, 9, 4, 6, 8];
-  const today = new Date().getDay(); // 0=Sun
+  const today = new Date().getDay(); 
   document.getElementById('weekBars').innerHTML = days.map((d, i) => `
     <div class="bar-wrap">
       <div class="bar" style="height:${vals[i] / 10 * 100}%;background:${(i + 1) === today ? 'var(--accent)' : 'rgba(255,255,255,0.15)'}"></div>
@@ -982,16 +828,7 @@ function updateAnalytics() {
     </div>
   `).join('');
 }
- 
-// ===== NOTIFICATIONS =====
-function markAllRead() {
-  document.querySelectorAll('.notif-item.unread').forEach(n => n.classList.remove('unread'));
-  document.querySelectorAll('.unread-dot').forEach(d => d.remove());
-  const nb = document.getElementById('notifBadge');
-  if (nb) nb.remove();
-  document.getElementById('notifCount').textContent = 'All caught up ✓';
-}
- 
+  
 // ===== SETTINGS =====
 function setAccent(color, el) {
   document.documentElement.style.setProperty('--accent', color);
