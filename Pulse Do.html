@@ -26,8 +26,7 @@
 }
  
 html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
- 
-/* ===== SPLASH ===== */
+                              /* ===== SPLASH ===== */
 #splash{
   position:fixed;inset:0;z-index:999;
   background:var(--bg);
@@ -73,15 +72,13 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 .splash-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(124,111,255,0.55);}
  
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
- 
-/* ===== APP SHELL ===== */
+                                /* ===== APP SHELL ===== */
 #app{
   display:flex;height:100%;
   opacity:0;transition:opacity 0.7s 0.1s;
 }
 #app.show{opacity:1;}
- 
-/* ===== SIDEBAR ===== */
+                            /* ===== SIDEBAR ===== */
 .sidebar{
   width:230px;min-width:230px;background:var(--sidebar);
   border-right:1px solid var(--border);
@@ -144,8 +141,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 .sb-user-info{flex:1;}
 .sb-user-name{font-size:13px;font-weight:600;}
 .sb-user-role{font-size:11px;color:var(--muted);}
- 
-/* ===== MAIN ===== */
+                                /* ===== MAIN ===== */
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden;}
  
 .topbar{
@@ -170,20 +166,17 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
  
 .page{flex:1;overflow-y:auto;padding:28px;display:none;}
 .page.active{display:block;}
- 
-/* scrollbar */
+                              /* scrollbar */
 .page::-webkit-scrollbar{width:5px;}
 .page::-webkit-scrollbar-track{background:transparent;}
 .page::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px;}
- 
-/* ===== CARDS ===== */
+                                /* ===== CARDS ===== */
 .card{
   background:var(--card);border:1px solid var(--border);
   border-radius:16px;padding:20px;
 }
 .card2{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:16px;}
- 
-/* ===== DASHBOARD ===== */
+                                  /* ===== DASHBOARD ===== */
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px;}
 .stat-card{
   background:var(--card);border:1px solid var(--border);
@@ -221,8 +214,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 .prog-label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;}
 .prog-track{height:6px;background:rgba(255,255,255,0.07);border-radius:99px;overflow:hidden;}
 .prog-fill{height:100%;border-radius:99px;transition:width 1s cubic-bezier(.4,0,.2,1);}
- 
-/* ===== TASKS PAGE ===== */
+                                  /* ===== TASKS PAGE ===== */
 .task-form{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
 .task-form input,.task-form select{
   padding:10px 14px;background:var(--card2);border:1px solid var(--border);
@@ -283,8 +275,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 .ft-btn.del-btn:hover{background:rgba(255,107,107,0.15);color:var(--high);border-color:var(--high);}
 .empty-state{text-align:center;padding:60px;color:var(--muted);}
 .empty-state .es-icon{font-size:48px;margin-bottom:12px;opacity:0.4;}
-  
-/* ===== ANALYTICS ===== */
+                              /* ===== ANALYTICS ===== */
 .analytics-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
 .chart-bars{display:flex;gap:8px;align-items:flex-end;height:120px;margin-top:16px;}
 .bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;}
@@ -295,8 +286,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 .donut-legend{display:flex;flex-direction:column;gap:8px;}
 .leg-item{display:flex;align-items:center;gap:8px;font-size:12px;}
 .leg-dot{width:8px;height:8px;border-radius:50%;}
- 
-/* ===== SETTINGS ===== */
+                            /* ===== SETTINGS ===== */
 .settings-section{margin-bottom:28px;}
 .settings-title{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
 .setting-row{
@@ -328,8 +318,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
   border:2px solid transparent;transition:border-color 0.2s;
 }
 .col-dot.active{border-color:#fff;}
- 
-/* ===== RESPONSIVE ===== */
+                      /* ===== RESPONSIVE ===== */
 @media(max-width:900px){
   .stats-grid{grid-template-columns:repeat(2,1fr);}
   .dash-row{grid-template-columns:1fr;}
@@ -352,8 +341,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 </style>
 </head>
 <body>
- 
-<!-- SPLASH -->
+          <!-- SPLASH -->
 <div id="splash">
   <div class="splash-logo">Pulse Do</div>
   <div class="splash-tagline">Your productivity, elevated</div>
@@ -366,11 +354,9 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
   </div>
   <button class="splash-btn" onclick="launchApp()">Get Started →</button>
 </div>
- 
-<!-- APP -->
+          <!-- APP -->
 <div id="app">
- 
-  <!-- SIDEBAR -->
+          <!-- SIDEBAR -->
   <div class="sidebar">
     <div class="sb-brand">
       <div class="sb-icon">⚡</div>
@@ -402,19 +388,16 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
       </div>
     </div>
   </div>
- 
-  <!-- MAIN -->
+          <!-- MAIN -->
   <div class="main">
- 
-    <!-- TOPBAR -->
+          <!-- TOPBAR -->
     <div class="topbar">
       <div class="topbar-title" id="topbarTitle">Dashboard</div>
       <div class="topbar-right">
         <button class="topbar-btn primary" onclick="nav('tasks',document.querySelectorAll('.nav-item')[1])">+ New Task</button>
       </div>
     </div>
- 
-    <!-- DASHBOARD PAGE -->
+          <!-- DASHBOARD PAGE -->
     <div class="page active" id="page-dashboard">
       <div class="stats-grid">
         <div class="stat-card c1">
@@ -476,8 +459,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
         </div>
       </div>
     </div>
- 
-    <!-- TASKS PAGE -->
+          <!-- TASKS PAGE -->
     <div class="page" id="page-tasks">
       <div class="card" style="margin-bottom:20px;">
         <div class="task-form">
@@ -508,8 +490,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
  
       <div id="taskList"></div>
     </div>
-  
-    <!-- ANALYTICS PAGE -->
+              <!-- ANALYTICS PAGE -->
     <div class="page" id="page-analytics">
       <div class="analytics-grid">
         <div class="card">
@@ -563,8 +544,7 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
         </div>
       </div>
     </div>
-  
-    <!-- SETTINGS PAGE -->
+         <!-- SETTINGS PAGE -->
     <div class="page" id="page-settings">
       <div style="max-width:600px;">
         <div class="settings-section">
@@ -636,15 +616,14 @@ html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;backgroun
 </div>
  
 <script>
-// ===== STATE =====
+           //STATE
 let tasks = JSON.parse(localStorage.getItem('pd-tasks-v2')) || [];
 let taskFilter = 'all';
  
 function save() {
   localStorage.setItem('pd-tasks-v2', JSON.stringify(tasks));
 }
- 
-// ===== SPLASH =====
+            //SPLASH
 function launchApp() {
   document.getElementById('splash').classList.add('hide');
   const app = document.getElementById('app');
@@ -652,8 +631,7 @@ function launchApp() {
   updateDash();
   renderTasks();
 }
- 
-// ===== NAVIGATION =====
+            //NAVIGATION
 const pageTitles = {
   dashboard: 'Dashboard',
   tasks: 'Tasks',
@@ -669,8 +647,7 @@ function nav(page, el) {
   document.getElementById('topbarTitle').textContent = pageTitles[page];
   if (page === 'analytics') setTimeout(updateAnalytics, 50);
 }
- 
-// ===== ADD TASK =====
+            //ADD TASK
 function addTask() {
   const txt = document.getElementById('taskInput').value.trim();
   if (!txt) return;
@@ -703,15 +680,14 @@ function editTask(id) {
   tasks = tasks.map(t => t.id === id ? { ...t, text: n.trim() } : t);
   save(); renderTasks();
 }
- 
-// ===== FILTER =====
+            //FILTER
 function setFilter(f, el) {
   taskFilter = f;
   document.querySelectorAll('.filt-btn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
   renderTasks();
 }
- 
+            // FILTER AND SEARCH INPUT
 function getFiltered() {
   let f = [...tasks];
   const s = (document.getElementById('searchInput') || {}).value || '';
@@ -721,8 +697,7 @@ function getFiltered() {
   if (s) f = f.filter(t => t.text.toLowerCase().includes(s.toLowerCase()));
   return f;
 }
- 
-// ===== RENDER TASKS =====
+            //RENDER TASKS
 function renderTasks() {
   const list = document.getElementById('taskList');
   const badge = document.getElementById('taskBadge');
@@ -755,8 +730,7 @@ function escapeHTML(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
- 
-// ===== DASHBOARD =====
+              //DASHBOARD
 function updateDash() {
   const total = tasks.length;
   const done = tasks.filter(t => t.done).length;
@@ -794,8 +768,7 @@ function updateDash() {
   document.getElementById('pl-pct').textContent = lp + '%'; document.getElementById('pl-bar').style.width = lp + '%';
   document.getElementById('ov-pct').textContent = pct + '%'; document.getElementById('ov-bar').style.width = pct + '%';
 }
- 
-// ===== ANALYTICS =====
+              //ANALYTICS
 function updateAnalytics() {
   const total = tasks.length;
   const done = tasks.filter(t => t.done).length;
@@ -828,15 +801,13 @@ function updateAnalytics() {
     </div>
   `).join('');
 }
-  
-// ===== SETTINGS =====
+            //SETTINGS
 function setAccent(color, el) {
   document.documentElement.style.setProperty('--accent', color);
   document.querySelectorAll('.col-dot').forEach(d => d.classList.remove('active'));
   el.classList.add('active');
 }
- 
-// ===== KEYBOARD SHORTCUT =====
+            //KEYBOARD SHORTCUT
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && document.activeElement === document.getElementById('taskInput')) {
     addTask();
